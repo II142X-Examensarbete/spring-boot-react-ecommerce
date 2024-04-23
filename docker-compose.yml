@@ -99,7 +99,7 @@ services:
     environment:
       - ACTIVE_PROFILE=${ACTIVE_PROFILE}
       - PORT=${SEARCH_SUGGESTION_SERVICE_PORT}
-      - COMMON_DATA_SERVICE_URL=http://common-data-service:${COMMON_DATA_SERVICE_PORT}
+      - COMMON_DATA_SERVICE_URL=http://85.228.122.74:${COMMON_DATA_SERVICE_PORT}
     expose:
       - ${SEARCH_SUGGESTION_SERVICE_PORT}
     ports:
@@ -125,6 +125,7 @@ services:
       - DB_SCHEMA=${DB_SCHEMA}
       - ACTIVE_PROFILE=${ACTIVE_PROFILE}
       - PORT=${PAYMENT_SERVICE_PORT}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
     links:
       - mysql-db:mysql
     expose:
@@ -147,7 +148,6 @@ services:
       - ${REACT_APP_PORT}:${REACT_APP_PORT}
     environment:
       - REACT_APP_STRIPE_PUBLISH_KEY=${REACT_APP_STRIPE_PUBLISH_KEY}
-      - REACT_APP_COMMON_DATA_SERVICE_PORT=${COMMON_DATA_SERVICE_PORT}
       - REACT_APP_ENVIRONMENT=${REACT_APP_ENVIRONMENT}
     volumes:
       - ./client:/usr/src/app
