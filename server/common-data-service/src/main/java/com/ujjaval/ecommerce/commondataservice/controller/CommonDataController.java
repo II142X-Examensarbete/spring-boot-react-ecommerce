@@ -37,6 +37,11 @@ public class CommonDataController {
         }
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<?> test() {
+        return ResponseEntity.ok("success");
+    }
+
     @GetMapping(value = "/products", params = "q")
     public ResponseEntity<?> getProductsByCategories(@RequestParam("q") String queryParams) {
 

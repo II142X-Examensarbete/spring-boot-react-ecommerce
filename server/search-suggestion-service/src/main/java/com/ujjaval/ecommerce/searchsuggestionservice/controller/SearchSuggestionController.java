@@ -24,6 +24,11 @@ public class SearchSuggestionController {
         searchSuggestionService.loadSearchSuggestionToMap();
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<?> test() {
+        return ResponseEntity.ok("success");
+    }
+
     @GetMapping("/search-suggestion")
     public ResponseEntity<?> searchKeyword(@RequestParam String q) {
         return ResponseEntity.ok(searchSuggestionService.searchKeywordFromMap(q));
