@@ -26,6 +26,14 @@ public class PaymentController {
         return ResponseEntity.ok("success");
     }
 
+    @PostMapping("/fakepayment")
+    public ResponseEntity<PaymentStatus> fakePayment(@RequestBody CardToken cardToken) {
+
+        return ResponseEntity.ok(new PaymentStatus(new Timestamp(System.currentTimeMillis()).getTime(), false,
+                "test_charge_id", "test_txn_id", "test_receipt_url"));
+
+    }
+
     @PostMapping("/payment")
     public ResponseEntity<PaymentStatus> chargeCustomer(@RequestBody CardToken cardToken) {
 
