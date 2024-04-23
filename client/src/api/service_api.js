@@ -10,13 +10,13 @@ const {
 } = process.env
 
 export const authServiceAPI = axios.create({
-    baseURL: REACT_APP_AUTHENTICATION_SERVICE_URL || `http://localhost:${REACT_APP_AUTHENTICATION_SERVICE_PORT}`
+    baseURL:  "http://85.228.122.74:7000/"
 })
 
 export const commonServiceAPI = axios.create({
-    baseURL: REACT_APP_COMMON_DATA_SERVICE_URL || `http://localhost:${REACT_APP_COMMON_DATA_SERVICE_PORT}`
+    baseURL:  "http://85.228.122.74:9000/"
 })
 
 export const searchSuggestionServiceAPI = axios.create({
-    baseURL: REACT_APP_SEARCH_SUGGESTION_SERVICE_URL || `http://localhost:${REACT_APP_SEARCH_SUGGESTION_SERVICE_PORT}`
+    baseURL:  "http://85.228.122.74:10000/"
 })
